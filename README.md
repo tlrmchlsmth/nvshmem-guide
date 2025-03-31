@@ -42,4 +42,6 @@ cmake \
     -DCMAKE_C_COMPILER=$MPI_HOME/bin/mpicc \
     -G Ninja \
     ..
+
+ninja install
 ```
