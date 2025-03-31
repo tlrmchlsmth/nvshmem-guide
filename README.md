@@ -43,5 +43,6 @@ cmake \
     -G Ninja \
     ..
 
+ninja build
 ninja install
 ```
