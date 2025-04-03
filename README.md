@@ -26,9 +26,10 @@ cd build
 # -DNVSHMEM_BUILD_EXAMPLES=0
 
 # May need to modify MPI_HOME
-MPI_HOME=/usr/mpi/gcc/openmpi-4.1.5a1 \
-CPLUS_INCLUDE_DIR=$MPI_HOME/include:$CUDA_HOME/include \
-LDFLAGS="-L$MPI_HOME/lib -lmpi" \
+export MPI_HOME=/usr/mpi/gcc/openmpi-4.1.5a1/
+export CPLUS_INCLUDE_PATH=$MPI_HOME/include:$CUDA_HOME/include
+export LDFLAGS="-L$MPI_HOME/lib -lmpi"
+
 cmake \
     -DCMAKE_INSTALL_PREFIX=$HOME/.local \
     -DNVSHMEM_PREFIX=$HOME/.local \
@@ -47,6 +48,5 @@ cmake \
     -G Ninja \
     ..
 
-ninja build
 ninja install
 ```
