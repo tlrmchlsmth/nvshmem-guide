@@ -27,7 +27,7 @@ cd build
 
 # May need to modify MPI_HOME
 MPI_HOME=/usr/mpi/gcc/openmpi-4.1.5a1 \
-CPLUS_INCLUDE_DIR=$MPI_HOME/include \
+CPLUS_INCLUDE_DIR=$MPI_HOME/include:$CUDA_HOME/include \
 LDFLAGS="-L$MPI_HOME/lib -lmpi" \
 cmake \
     -DCMAKE_INSTALL_PREFIX=$HOME/.local \
